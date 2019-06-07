@@ -6,12 +6,12 @@ void main()
 {
   int computer;
   int user;
-  int result[3]={0, }; //[0]지는경우,[1]비기는경우,[2]이기는경우
+  int result[3]={0,0,0}; //[0]지는경우,[1]비기는경우,[2]이기는경우
   int cnt=0;
   
   srand(time(NULL));
   
-  whlie(true)
+  whlie(1)
   {
     computer=rand()%3+1; //1~3까지 난수생성.
     
@@ -32,9 +32,9 @@ void main()
         result[1]++;
       }
       else if(
-        (computer==1 && user==3)||
-        (computer==2 && user==1)||
-        (computer==3 && user==2))
+        ((computer==1) && (user==3))||
+        ((computer==2) && (user==1))||
+        ((computer==3) && (user==2)))
       {
         printf("패배했습니다\n");
         result[0]++;
