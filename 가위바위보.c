@@ -13,7 +13,7 @@ void main()
   
   whlie(1)
   {
-    srand(time(NULL));
+    srand((unsigned)time(NULL));
     computer=rand()%3+1; //1~3까지 난수생성.
     
     printf("***가위바위보게임***\n");
