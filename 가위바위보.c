@@ -9,10 +9,11 @@ void main()
   int result[3]={0,0,0}; //[0]지는경우,[1]비기는경우,[2]이기는경우
   int cnt=0;
   
-  srand(time(NULL));
+ 
   
   whlie(1)
   {
+    srand(time(NULL));
     computer=rand()%3+1; //1~3까지 난수생성.
     
     printf("***가위바위보게임***\n");
@@ -32,9 +33,9 @@ void main()
         result[1]++;
       }
       else if(
-        ((computer==1) && (user==3))||
-        ((computer==2) && (user==1))||
-        ((computer==3) && (user==2)))
+        (computer==1 && user==3)||
+        (computer==2 && user==1)||
+        (computer==3 && user==2))
       {
         printf("패배했습니다\n");
         result[0]++;
@@ -44,19 +45,20 @@ void main()
         printf("승리했습니다\n");
       result[2]++;
       }
-      printf("%d전 %d승 %d무 %d패 입니다.\n" ,cnt,result[2],result[1],result[0]);
+     
     }
     else
     {
       if (user==0)
       {
+        printf("%d전 %d승 %d무 %d패 입니다.\n" ,cnt,result[2],result[1],result[0]);
         printf("게임을 종료합니다.\n");
+        
         break;
       }
       printf("1,2,3,0중에서 입력해주세요\n");
     }
-    system("pause");
-    system("cls");
+    
   }
   return 0;
 }
